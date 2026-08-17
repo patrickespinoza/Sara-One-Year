@@ -273,7 +273,7 @@ export default function Portada() {
                   ease: [0.22, 1, 0.36, 1],
                 }}
               >
-                Sara
+                Sarah
               </motion.h1>
 
               {/* DETALLE */}
@@ -352,7 +352,7 @@ export default function Portada() {
                   }}
                   role="button"
                   tabIndex={0}
-                  aria-label="Abrir invitación de Sara"
+                  aria-label="Abrir invitación de Sarah"
                   className="
                     group
                     relative
@@ -449,7 +449,7 @@ export default function Portada() {
 
                     <img
                       src="/conejo.png"
-                      alt="Conejito de Sara"
+                      alt="Conejito de Sarah"
                       draggable="false"
                       className="
                         relative
@@ -798,7 +798,7 @@ export default function Portada() {
 
         <motion.img
           src="/portada.png"
-          alt="Sara"
+          alt="Sarah"
           className="
             absolute
             inset-0
@@ -907,16 +907,16 @@ export default function Portada() {
               className="
                 mt-2
                 font-cursiveDancing
-                text-[70px]
+                text-[80px]
                 leading-none
-                sm:text-[100px]
+                sm:text-[110px]
               "
               style={{
                 color: palette.pink,
                 textShadow: "0 4px 24px rgba(0,0,0,0.35)",
               }}
             >
-              Sara
+              Sarah
             </h1>
           </motion.div>
 
