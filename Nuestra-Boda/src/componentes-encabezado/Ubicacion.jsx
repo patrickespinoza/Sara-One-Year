@@ -681,8 +681,7 @@ export default function EventoDireccion() {
                   color: palette.blackSoft,
                 }}
               >
-                Remedios 151, Santiago Momoxpan, Zona Sin Asignación de Nombre
-                de Colonia, 72705 San Juan Cuautlancingo, Pue.
+                Remedios 151, Santiago Momoxpan, 72705 San Juan Cuautlancingo, Pue.
               </p>
             </motion.div>
 
