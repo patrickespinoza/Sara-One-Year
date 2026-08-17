@@ -690,7 +690,7 @@ export default function EventoDireccion() {
             ========================================= */}
 
             <motion.a
-              href="https://maps.app.goo.gl/1LWC766HJqYbUJBt5"
+              href="https://maps.app.goo.gl/FhbguDuvcNLY1T5T6?g_st=iw"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Abrir ubicación en Google Maps"
