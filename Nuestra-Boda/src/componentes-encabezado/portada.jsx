@@ -111,7 +111,7 @@ export default function Portada() {
       ========================================= */}
 
       <audio ref={audioRef} loop preload="auto">
-        <source src="/TylerShaw.mp3" type="audio/mpeg" />
+        <source src="/musica.mp3" type="audio/mpeg" />
       </audio>
 
       {/* =========================================
@@ -438,7 +438,6 @@ export default function Portada() {
                         borderColor: "rgba(244,198,215,0.5)",
                       }}
                     />
-
 
                     <div
                       className="my-3 h-px w-10"
@@ -783,7 +782,6 @@ export default function Portada() {
 
       {/* =========================================
           PORTADA INTERIOR
-          ESTA PARTE LA MODIFICAREMOS DESPUÉS
       ========================================= */}
 
       <section
@@ -797,7 +795,10 @@ export default function Portada() {
           backgroundColor: palette.black,
         }}
       >
-        {/* FOTOGRAFÍA */}
+        {/* =========================================
+            FOTOGRAFÍA
+            SIN EFECTO DE ZOOM
+        ========================================= */}
 
         <motion.img
           src="/portada.png"
@@ -808,35 +809,24 @@ export default function Portada() {
             h-full
             w-full
             object-cover
-            object-[center_60%]
+            object-[0%_50%]
           "
           initial={{
             opacity: 0,
-            scale: 1.035,
           }}
-          animate={
-            mostrarContenido
-              ? {
-                  opacity: 1,
-                  scale: 1,
-                }
-              : {
-                  opacity: 0,
-                  scale: 1.035,
-                }
-          }
+          animate={{
+            opacity: mostrarContenido ? 1 : 0,
+          }}
           transition={{
             opacity: {
               duration: 1.2,
             },
-            scale: {
-              duration: 7,
-              ease: "easeOut",
-            },
           }}
         />
 
-        {/* OVERLAY */}
+        {/* =========================================
+            OVERLAY
+        ========================================= */}
 
         <motion.div
           className="absolute inset-0"
@@ -862,7 +852,9 @@ export default function Portada() {
           }}
         />
 
-        {/* CONTENIDO TEMPORAL DE LA PORTADA INTERIOR */}
+        {/* =========================================
+            CONTENIDO DE LA PORTADA
+        ========================================= */}
 
         <motion.div
           className="
@@ -910,7 +902,6 @@ export default function Portada() {
               delay: 0.5,
             }}
           >
-
             <h1
               className="
                 mt-2
@@ -928,7 +919,9 @@ export default function Portada() {
             </h1>
           </motion.div>
 
-          {/* CONTADOR TEMPORAL */}
+          {/* =========================================
+              CONTADOR
+          ========================================= */}
 
           <motion.div
             className="
