@@ -51,21 +51,6 @@ export default function PaginaPrincipal() {
 
 <EventoDireccion/>
 
-<Galeria/>
-
-<ItinerarioRelojCentral/>
-  
-<FraseModal/> 
-
-<DressCodePremium/>
-
-<Album/>
-
-<Preguntas/>
-
-<Regalos/>
-
-<Confirmacion/>
   
 
       </div>      

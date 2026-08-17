@@ -1,19 +1,18 @@
 import { motion } from "framer-motion";
 
 /* =========================================
-   FRASE EDITORIAL CLÁSICA
+   FRASE - PRIMER AÑO DE Sarah
 ========================================= */
 
 const palette = {
-  ink: "#1D2733",
-  inkSoft: "#39434D",
-  paper: "#F5F1E8",
-  paperLight: "#FBF9F4",
-  paperDark: "#E5DED2",
-  antiqueGold: "#A48654",
-  antiqueGoldDark: "#725B37",
-  warmGray: "#777168",
-  line: "#C9BEAC",
+  pink: "#F4C6D7",
+  pinkStrong: "#D989A8",
+  pinkSoft: "#FBE7EF",
+  pinkLight: "#FFF7FA",
+
+  white: "#FFFFFF",
+  black: "#171717",
+  blackSoft: "#4A4146",
 };
 
 const reveal = {
@@ -31,107 +30,74 @@ const reveal = {
   },
 };
 
-function BotanicalDetail({ className = "" }) {
+/* =========================================
+   ESTRELLA DECORATIVA
+========================================= */
+
+function Star({ className = "" }) {
   return (
     <svg
-      viewBox="0 0 130 210"
+      viewBox="0 0 24 24"
       fill="none"
       aria-hidden="true"
       className={className}
     >
       <path
-        d="M66 203C70 158 70 112 65 17"
-        stroke="currentColor"
-        strokeWidth="1"
-        strokeLinecap="round"
-      />
-
-      <path
-        d="M66 164C49 153 39 139 34 121"
-        stroke="currentColor"
-        strokeWidth="0.8"
-        strokeLinecap="round"
-      />
-
-      <path
-        d="M66 139C82 128 92 113 96 94"
-        stroke="currentColor"
-        strokeWidth="0.8"
-        strokeLinecap="round"
-      />
-
-      <path
-        d="M65 103C50 92 42 79 39 64"
-        stroke="currentColor"
-        strokeWidth="0.8"
-        strokeLinecap="round"
-      />
-
-      <path
-        d="M65 76C80 66 87 52 89 38"
-        stroke="currentColor"
-        strokeWidth="0.8"
-        strokeLinecap="round"
-      />
-
-      <path
-        d="M34 121C44 120 52 126 57 137C46 137 38 132 34 121Z"
-        stroke="currentColor"
-        strokeWidth="0.7"
-      />
-
-      <path
-        d="M96 94C86 94 78 100 72 111C84 111 92 105 96 94Z"
-        stroke="currentColor"
-        strokeWidth="0.7"
-      />
-
-      <path
-        d="M39 64C49 65 57 71 61 82C50 81 42 75 39 64Z"
-        stroke="currentColor"
-        strokeWidth="0.7"
-      />
-
-      <path
-        d="M89 38C80 39 73 45 68 55C79 54 86 49 89 38Z"
-        stroke="currentColor"
-        strokeWidth="0.7"
-      />
-
-      <circle
-        cx="65"
-        cy="16"
-        r="3"
-        stroke="currentColor"
-        strokeWidth="0.7"
+        d="M12 2C12.8 7.4 16.6 11.2 22 12C16.6 12.8 12.8 16.6 12 22C11.2 16.6 7.4 12.8 2 12C7.4 11.2 11.2 7.4 12 2Z"
+        fill="currentColor"
       />
     </svg>
   );
 }
 
+/* =========================================
+   CORAZÓN
+========================================= */
+
+function Heart({ className = "" }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+      className={className}
+    >
+      <path
+        d="M20.8 4.6C18.7 2.5 15.3 2.5 13.2 4.6L12 5.8L10.8 4.6C8.7 2.5 5.3 2.5 3.2 4.6C1.1 6.7 1.1 10.1 3.2 12.2L12 21L20.8 12.2C22.9 10.1 22.9 6.7 20.8 4.6Z"
+        stroke="currentColor"
+        strokeWidth="1.2"
+      />
+    </svg>
+  );
+}
+
+/* =========================================
+   SEPARADOR
+========================================= */
+
 function SmallDivider() {
   return (
     <div className="flex items-center justify-center gap-3">
       <span
-        className="h-px w-10 sm:w-14"
+        className="h-px w-10 sm:w-16"
         style={{
           background:
-            "linear-gradient(to right, transparent, rgba(164,134,84,0.72))",
+            "linear-gradient(to right, transparent, rgba(217,137,168,0.75))",
+        }}
+      />
+
+      <Heart
+        className="h-[12px] w-[12px]"
+        style={{
+          color: palette.pinkStrong,
         }}
       />
 
       <span
-        className="h-[5px] w-[5px] rotate-45 border"
-        style={{
-          borderColor: "rgba(164,134,84,0.72)",
-        }}
-      />
-
-      <span
-        className="h-px w-10 sm:w-14"
+        className="h-px w-10 sm:w-16"
         style={{
           background:
-            "linear-gradient(to left, transparent, rgba(164,134,84,0.72))",
+            "linear-gradient(to left, transparent, rgba(217,137,168,0.75))",
         }}
       />
     </div>
@@ -170,48 +136,148 @@ export default function FrasePremium() {
         background: `
           linear-gradient(
             180deg,
-            ${palette.paperLight} 0%,
-            ${palette.paper} 55%,
-            ${palette.paperDark} 100%
+            ${palette.white} 0%,
+            ${palette.pinkLight} 50%,
+            ${palette.pinkSoft} 100%
           )
         `,
       }}
     >
-      {/* TEXTURA DE PAPEL */}
+      {/* =========================================
+          CÍRCULOS DECORATIVOS
+      ========================================= */}
 
       <div
         className="
           pointer-events-none
           absolute
-          inset-0
-          opacity-[0.16]
+          -left-24
+          -top-24
+          h-[280px]
+          w-[280px]
+          rounded-full
+          blur-3xl
         "
         style={{
-          backgroundImage: `
-            repeating-linear-gradient(
-              0deg,
-              rgba(29,39,51,0.025) 0px,
-              rgba(29,39,51,0.025) 1px,
-              transparent 1px,
-              transparent 5px
-            )
-          `,
+          backgroundColor: "rgba(244,198,215,0.28)",
         }}
       />
 
-      {/* MARCO EXTERIOR */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          -bottom-28
+          -right-24
+          h-[320px]
+          w-[320px]
+          rounded-full
+          blur-3xl
+        "
+        style={{
+          backgroundColor: "rgba(217,137,168,0.15)",
+        }}
+      />
+
+      {/* =========================================
+          ESTRELLAS DECORATIVAS
+      ========================================= */}
+
+      <motion.div
+        className="
+          pointer-events-none
+          absolute
+          left-[9%]
+          top-[15%]
+        "
+        animate={{
+          scale: [1, 1.25, 1],
+          opacity: [0.35, 0.8, 0.35],
+          rotate: [0, 15, 0],
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      >
+        <Star
+          className="h-5 w-5 sm:h-7 sm:w-7"
+          style={{
+            color: palette.pink,
+          }}
+        />
+      </motion.div>
+
+      <motion.div
+        className="
+          pointer-events-none
+          absolute
+          right-[11%]
+          top-[24%]
+        "
+        animate={{
+          scale: [1, 1.35, 1],
+          opacity: [0.25, 0.7, 0.25],
+        }}
+        transition={{
+          duration: 2.6,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 0.6,
+        }}
+      >
+        <Star
+          className="h-3 w-3 sm:h-5 sm:w-5"
+          style={{
+            color: palette.pinkStrong,
+          }}
+        />
+      </motion.div>
+
+      <motion.div
+        className="
+          pointer-events-none
+          absolute
+          bottom-[18%]
+          left-[15%]
+        "
+        animate={{
+          scale: [1, 1.3, 1],
+          opacity: [0.2, 0.6, 0.2],
+        }}
+        transition={{
+          duration: 3.4,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1,
+        }}
+      >
+        <Star
+          className="h-3 w-3 sm:h-4 sm:w-4"
+          style={{
+            color: palette.pinkStrong,
+          }}
+        />
+      </motion.div>
+
+      {/* =========================================
+          MARCO
+      ========================================= */}
 
       <div
         className="
           pointer-events-none
           absolute
           inset-5
+          rounded-[28px]
           border
           sm:inset-8
+          sm:rounded-[36px]
           lg:inset-10
         "
         style={{
-          borderColor: "rgba(164,134,84,0.26)",
+          borderColor: "rgba(217,137,168,0.28)",
         }}
       />
 
@@ -220,56 +286,20 @@ export default function FrasePremium() {
           pointer-events-none
           absolute
           inset-[26px]
+          rounded-[23px]
           border
           sm:inset-[38px]
+          sm:rounded-[30px]
           lg:inset-[46px]
         "
         style={{
-          borderColor: "rgba(164,134,84,0.1)",
+          borderColor: "rgba(244,198,215,0.25)",
         }}
       />
 
-      {/* DETALLES BOTÁNICOS */}
-
-      <BotanicalDetail
-        className="
-          pointer-events-none
-          absolute
-          -bottom-8
-          -left-5
-          h-[210px]
-          w-[130px]
-          -rotate-12
-          text-[#A48654]/20
-          sm:-left-1
-          sm:h-[260px]
-          sm:w-[160px]
-          lg:left-8
-          lg:h-[310px]
-          lg:w-[190px]
-        "
-      />
-
-      <BotanicalDetail
-        className="
-          pointer-events-none
-          absolute
-          -right-5
-          -top-10
-          h-[210px]
-          w-[130px]
-          rotate-[168deg]
-          text-[#A48654]/20
-          sm:-right-1
-          sm:h-[260px]
-          sm:w-[160px]
-          lg:right-8
-          lg:h-[310px]
-          lg:w-[190px]
-        "
-      />
-
-      {/* CONTENIDO */}
+      {/* =========================================
+          CONTENIDO
+      ========================================= */}
 
       <div
         className="
@@ -278,67 +308,55 @@ export default function FrasePremium() {
           mx-auto
           flex
           w-full
-          max-w-5xl
+          max-w-4xl
           flex-col
           items-center
         "
       >
-        {/* ETIQUETA */}
+
+        {/* CORAZÓN */}
 
         <motion.div
+          className="mt-6"
           initial={{
             opacity: 0,
-            y: -10,
+            scale: 0.7,
           }}
           whileInView={{
             opacity: 1,
-            y: 0,
+            scale: 1,
           }}
           viewport={{ once: true }}
           transition={{
             duration: 0.8,
-            ease: [0.22, 1, 0.36, 1],
+            delay: 0.1,
           }}
         >
-          <p
-            className="
-              text-[8px]
-              uppercase
-              tracking-[0.42em]
-              sm:text-[10px]
-              sm:tracking-[0.52em]
-            "
+          <Heart
+            className="h-7 w-7 sm:h-8 sm:w-8"
             style={{
-              color: palette.antiqueGoldDark,
+              color: palette.pinkStrong,
             }}
-          >
-            Una historia de amor
-          </p>
-
-          <div className="mt-5">
-            <SmallDivider />
-          </div>
+          />
         </motion.div>
 
-        {/* COMILLA */}
+        {/* MI PRIMER AÑO */}
 
-        <motion.span
+        <motion.p
           className="
             mt-8
-            block
             font-serif
-            text-[68px]
-            font-light
-            leading-[0.65]
-            sm:mt-10
-            sm:text-[86px]
+            text-[12px]
+            uppercase
+            tracking-[0.32em]
+            sm:text-sm
           "
           style={{
-            color: "rgba(164,134,84,0.28)",
+            color: palette.blackSoft,
           }}
           initial={{
             opacity: 0,
-            y: 12,
+            y: 15,
           }}
           whileInView={{
             opacity: 1,
@@ -347,32 +365,84 @@ export default function FrasePremium() {
           viewport={{ once: true }}
           transition={{
             duration: 0.9,
-            delay: 0.12,
+            delay: 0.15,
           }}
         >
-          “
-        </motion.span>
+          Mi primer año
+        </motion.p>
 
-        {/* FRASE */}
+        {/* Sarah */}
+
+        <motion.h2
+          className="
+            mt-2
+            font-cursiveDancing
+            text-[68px]
+            font-normal
+            leading-none
+            sm:text-[90px]
+            md:text-[105px]
+          "
+          style={{
+            color: palette.pinkStrong,
+          }}
+          initial={{
+            opacity: 0,
+            y: 18,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 1,
+            delay: 0.2,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+        >
+          Sarah
+        </motion.h2>
+
+        {/* SEPARADOR */}
+
+        <motion.div
+          className="my-8 sm:my-10"
+          initial={{
+            opacity: 0,
+            scaleX: 0.7,
+          }}
+          whileInView={{
+            opacity: 1,
+            scaleX: 1,
+          }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.9,
+            delay: 0.28,
+          }}
+        >
+          <SmallDivider />
+        </motion.div>
+
+        {/* FRASE PRINCIPAL */}
 
         <motion.blockquote
           className="
             mx-auto
-            mt-3
-            max-w-4xl
+            max-w-3xl
             font-serif
-            text-[26px]
+            text-[25px]
             font-normal
             leading-[1.55]
-            tracking-[-0.015em]
-            sm:text-[35px]
+            tracking-[-0.01em]
+            sm:text-[34px]
             sm:leading-[1.5]
-            md:text-[41px]
-            lg:text-[46px]
-            lg:leading-[1.42]
+            md:text-[39px]
+            lg:text-[43px]
           "
           style={{
-            color: palette.ink,
+            color: palette.black,
           }}
           initial={{
             opacity: 0,
@@ -385,80 +455,21 @@ export default function FrasePremium() {
           viewport={{ once: true }}
           transition={{
             duration: 1,
-            delay: 0.18,
+            delay: 0.32,
             ease: [0.22, 1, 0.36, 1],
           }}
         >
-          Te quiero no por quien eres,
-          <span className="block">
-            sino por quien soy
-          </span>
-          <span className="block">
-            cuando estoy contigo.
-          </span>
+          Acompáñanos a celebrar el primer cumpleaños de nuestra pequeña
+
         </motion.blockquote>
 
-        {/* SEPARADOR */}
+        {/* CIERRE */}
 
         <motion.div
           className="
-            my-9
-            sm:my-11
-          "
-          initial={{
-            opacity: 0,
-            scaleX: 0.65,
-          }}
-          whileInView={{
-            opacity: 1,
-            scaleX: 1,
-          }}
-          viewport={{ once: true }}
-          transition={{
-            duration: 0.9,
-            delay: 0.32,
-          }}
-        >
-          <SmallDivider />
-        </motion.div>
-
-        {/* AUTOR */}
-
-        <motion.p
-          className="
-            text-[9px]
-            uppercase
-            tracking-[0.28em]
-            sm:text-[11px]
-            sm:tracking-[0.4em]
-          "
-          style={{
-            color: palette.warmGray,
-          }}
-          initial={{
-            opacity: 0,
-            y: 10,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{ once: true }}
-          transition={{
-            duration: 0.85,
-            delay: 0.4,
-          }}
-        >
-          Gabriel García Márquez
-        </motion.p>
-
-        {/* CIERRE NARRATIVO */}
-
-        <motion.div
-          className="
-            mt-12
-            max-w-lg
-            sm:mt-14
+            mt-10
+            max-w-xl
+            sm:mt-12
           "
           initial={{
             opacity: 0,
@@ -471,7 +482,7 @@ export default function FrasePremium() {
           viewport={{ once: true }}
           transition={{
             duration: 0.9,
-            delay: 0.5,
+            delay: 0.45,
           }}
         >
           <div
@@ -482,7 +493,7 @@ export default function FrasePremium() {
               w-16
             "
             style={{
-              backgroundColor: "rgba(164,134,84,0.48)",
+              backgroundColor: "rgba(217,137,168,0.55)",
             }}
           />
 
@@ -493,13 +504,14 @@ export default function FrasePremium() {
               italic
               leading-7
               sm:text-base
+              sm:leading-8
             "
             style={{
-              color: palette.inkSoft,
+              color: palette.blackSoft,
             }}
           >
-            Desde que nuestros caminos se encontraron, aprendimos que el amor
-            también se construye en los pequeños momentos.
+            Un año lleno de sonrisas, aprendizajes y momentos inolvidables
+            merece una celebración llena de amor.
           </p>
         </motion.div>
       </div>
