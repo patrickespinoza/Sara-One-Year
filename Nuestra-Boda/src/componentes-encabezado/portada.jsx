@@ -950,7 +950,7 @@ export default function Portada() {
               delay: 0.9,
             }}
           >
-            <Countdown targetDate="2026-09-07T00:00:00" />
+            <Countdown targetDate="2026-09-12T00:00:00" />
 
             <p
               className="
