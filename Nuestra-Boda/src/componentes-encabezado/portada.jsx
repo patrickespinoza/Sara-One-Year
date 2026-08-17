@@ -75,6 +75,8 @@ export default function Portada() {
 
     setAbrirSobre(true);
 
+    /* MÚSICA */
+
     window.setTimeout(() => {
       if (audioRef.current) {
         audioRef.current.volume = 0.45;
@@ -84,6 +86,8 @@ export default function Portada() {
         });
       }
     }, 400);
+
+    /* MOSTRAR INVITACIÓN */
 
     window.setTimeout(() => {
       window.scrollTo({
@@ -127,7 +131,7 @@ export default function Portada() {
               inset-0
               z-[9999]
               flex
-              h-[100dvh]
+              h-[100svh]
               w-full
               items-center
               justify-center
@@ -151,14 +155,15 @@ export default function Portada() {
             initial={{ opacity: 1 }}
             exit={{
               opacity: 0,
-              scale: 1.015,
             }}
             transition={{
               duration: 0.75,
               ease: [0.22, 1, 0.36, 1],
             }}
           >
-            {/* DECORACIÓN SUAVE DE FONDO */}
+            {/* =========================================
+                DECORACIÓN DE FONDO
+            ========================================= */}
 
             <div
               className="
@@ -192,7 +197,9 @@ export default function Portada() {
               }}
             />
 
-            {/* CONTENIDO CENTRAL */}
+            {/* =========================================
+                CONTENIDO CENTRAL
+            ========================================= */}
 
             <div
               className="
@@ -237,7 +244,7 @@ export default function Portada() {
                 Mi primer año
               </motion.p>
 
-              {/* SARAH */}
+              {/* SARA */}
 
               <motion.h1
                 className="
@@ -255,12 +262,10 @@ export default function Portada() {
                 initial={{
                   opacity: 0,
                   y: -12,
-                  scale: 0.96,
                 }}
                 animate={{
                   opacity: 1,
                   y: 0,
-                  scale: 1,
                 }}
                 transition={{
                   duration: 1,
@@ -268,7 +273,7 @@ export default function Portada() {
                   ease: [0.22, 1, 0.36, 1],
                 }}
               >
-                Sarah
+                Sara
               </motion.h1>
 
               {/* DETALLE */}
@@ -320,12 +325,10 @@ export default function Portada() {
                 initial={{
                   opacity: 0,
                   y: 28,
-                  scale: 0.97,
                 }}
                 animate={{
                   opacity: 1,
                   y: 0,
-                  scale: 1,
                 }}
                 transition={{
                   duration: 1,
@@ -349,7 +352,7 @@ export default function Portada() {
                   }}
                   role="button"
                   tabIndex={0}
-                  aria-label="Abrir invitación de Sarah"
+                  aria-label="Abrir invitación de Sara"
                   className="
                     group
                     relative
@@ -399,8 +402,8 @@ export default function Portada() {
                       justify-center
                       overflow-hidden
                       border
-                      px-5
-                      py-5
+                      px-3
+                      py-3
                       text-center
                     "
                     style={{
@@ -412,11 +415,9 @@ export default function Portada() {
                       abrirSobre
                         ? {
                             y: -82,
-                            scale: 1.015,
                           }
                         : {
                             y: 0,
-                            scale: 1,
                           }
                     }
                     transition={{
@@ -439,38 +440,27 @@ export default function Portada() {
                       }}
                     />
 
-                    <div
-                      className="my-3 h-px w-10"
-                      style={{
-                        backgroundColor: palette.pink,
-                      }}
+                    {/* =========================================
+                        CONEJO
+
+                        Guarda la imagen como:
+                        public/conejo.png
+                    ========================================= */}
+
+                    <img
+                      src="/conejo.png"
+                      alt="Conejito de Sara"
+                      draggable="false"
+                      className="
+                        relative
+                        z-10
+                        h-[92%]
+                        w-[92%]
+                        select-none
+                        object-contain
+                        object-center
+                      "
                     />
-
-                    <p
-                      className="
-                        font-cursiveDancing
-                        text-[38px]
-                        leading-none
-                        sm:text-[48px]
-                      "
-                      style={{
-                        color: palette.pinkStrong,
-                      }}
-                    >
-                      Sarah
-                    </p>
-
-                    <div
-                      className="
-                        mt-3
-                        text-[13px]
-                      "
-                      style={{
-                        color: palette.pinkStrong,
-                      }}
-                    >
-                      ♡
-                    </div>
                   </motion.div>
 
                   {/* =========================================
@@ -502,11 +492,9 @@ export default function Portada() {
                     animate={
                       abrirSobre
                         ? {
-                            scale: 1.012,
                             y: 6,
                           }
                         : {
-                            scale: 1,
                             y: 0,
                           }
                     }
@@ -782,12 +770,17 @@ export default function Portada() {
 
       {/* =========================================
           PORTADA INTERIOR
+
+          IMPORTANTE:
+          usamos 100svh en lugar de 100dvh
+          para evitar el redimensionamiento al hacer scroll
       ========================================= */}
 
       <section
         className="
           relative
-          min-h-[100dvh]
+          h-[100svh]
+          min-h-[100svh]
           w-full
           overflow-hidden
         "
@@ -796,13 +789,16 @@ export default function Portada() {
         }}
       >
         {/* =========================================
-            FOTOGRAFÍA
-            SIN EFECTO DE ZOOM
+            FOTOGRAFÍA DE PORTADA
+
+            SIN SCALE
+            SIN ZOOM
+            ALTURA FIJA 100svh
         ========================================= */}
 
         <motion.img
           src="/portada.png"
-          alt="Sarah"
+          alt="Sara"
           className="
             absolute
             inset-0
@@ -853,7 +849,7 @@ export default function Portada() {
         />
 
         {/* =========================================
-            CONTENIDO DE LA PORTADA
+            CONTENIDO PORTADA
         ========================================= */}
 
         <motion.div
@@ -861,7 +857,8 @@ export default function Portada() {
             relative
             z-20
             flex
-            min-h-[100dvh]
+            h-[100svh]
+            min-h-[100svh]
             w-full
             flex-col
             items-center
@@ -881,6 +878,10 @@ export default function Portada() {
             delay: 0.2,
           }}
         >
+          {/* =========================================
+              NOMBRE
+          ========================================= */}
+
           <motion.div
             initial={{
               opacity: 0,
@@ -915,7 +916,7 @@ export default function Portada() {
                 textShadow: "0 4px 24px rgba(0,0,0,0.35)",
               }}
             >
-              Sarah
+              Sara
             </h1>
           </motion.div>
 
